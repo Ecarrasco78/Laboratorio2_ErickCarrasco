@@ -33,7 +33,18 @@ public class Lab2_ErickCarrasco {
                         String clase="";
                         System.out.println("Ingrese el nombre de la clase");
                         clase = read.nextLine();
-                        clases.add(clase);
+                        String preguntas ="";
+                        char resp = 's';
+                        while (resp == 's'|| resp== 's'){
+                            String q="";
+                            System.out.println("Ingrese su pregunta");
+                            q=read.nextLine();
+                            preguntas += q + "\n";
+                            System.out.println("Desea volver a ingresar una pregunta? s/n");
+                            resp = read.next().charAt(0);
+                        }
+                        tests.add(new Examenes(clase, preguntas));
+                        
                     }
                     
                 }
