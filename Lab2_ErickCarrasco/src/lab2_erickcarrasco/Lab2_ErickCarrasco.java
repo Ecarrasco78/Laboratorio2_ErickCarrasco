@@ -17,9 +17,20 @@ public class Lab2_ErickCarrasco {
         System.out.println("4/ Shut Down");
         System.out.println(" ");
         opt = read.nextInt();
-        switch (opt){
-            case 1:
+        while (opt > 0 && opt < 5) {
+            if (opt == 1) {
+                int selectionA = 0;
+                while (selectionA != 5) {
+                    System.out.println("1/Create Test");
+                    System.out.println("2/Test check");
+                    System.out.println("3/Check grades");
+                    System.out.println("4/Modify grades");
+                }
+            }
+            if(opt == 2){
                 
+                System.out.println("Create account");
+            }
         }
     }
     
