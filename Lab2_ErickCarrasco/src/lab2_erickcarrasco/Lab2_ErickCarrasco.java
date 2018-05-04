@@ -30,6 +30,15 @@ public class Lab2_ErickCarrasco {
             if(opt == 2){
                 
                 System.out.println("Create account");
+                String name="";
+                String usern = "";
+                String password = "";
+                System.out.println("Write your name");
+                name = read.next();
+                System.out.println("Write your username");
+                usern = read.next();
+                System.out.println("Write down a password");
+                users.add(new Alumnos(name, usern, password));
             }
         }
     }
