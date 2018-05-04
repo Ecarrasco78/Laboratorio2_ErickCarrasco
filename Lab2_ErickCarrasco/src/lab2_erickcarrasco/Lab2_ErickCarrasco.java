@@ -8,24 +8,39 @@ public class Lab2_ErickCarrasco {
         Scanner read = new Scanner(System.in);
         System.out.println("Welcome");
         int opt;
-        ArrayList users = new ArrayList();
-        ArrayList grades = new ArrayList();
-        ArrayList tests = new ArrayList();
+        ArrayList<Alumnos> users = new ArrayList();
+        ArrayList<Notas> grades = new ArrayList();
+        ArrayList<Examenes> tests = new ArrayList();
+        ArrayList clases = new ArrayList();
         System.out.println("1/ Admin");
         System.out.println("2/ Create account");
         System.out.println("3/ Log in");
         System.out.println("4/ Shut Down");
-        System.out.println(" ");
         opt = read.nextInt();
-        while (opt > 0 && opt < 5) {
+        while (opt > 0 && opt < 4) {
             if (opt == 1) {
-                int selectionA = 0;
-                while (selectionA != 5) {
-                    System.out.println("1/Create Test");
-                    System.out.println("2/Test check");
-                    System.out.println("3/Check grades");
-                    System.out.println("4/Modify grades");
+                
+                System.out.println("1/Create Test");
+                System.out.println("2/Test check");
+                System.out.println("3/Check grades");
+                System.out.println("4/Modify grades");
+                System.out.println("5/Exit");
+                int  selectA;
+                selectA = read.nextInt();
+                while(selectA !=5){
+                    if(selectA == 1){
+                        System.out.println("Crear examen");
+                        String clase="";
+                        System.out.println("Ingrese el nombre de la clase");
+                        clase = read.nextLine();
+                        clases.add(clase);
+                    }
+                    
                 }
+
+
+      
+                
             }
             if(opt == 2){
                 
@@ -33,13 +48,59 @@ public class Lab2_ErickCarrasco {
                 String name="";
                 String usern = "";
                 String password = "";
+                String nationality ="";
+                String city="";
+                String ID ="";
                 System.out.println("Write your name");
-                name = read.next();
+                name = read.nextLine();
+                name = read.nextLine();
+                read = new Scanner(System.in);
                 System.out.println("Write your username");
-                usern = read.next();
+                usern = read.nextLine();
                 System.out.println("Write down a password");
-                users.add(new Alumnos(name, usern, password));
+                password = read.nextLine();
+                System.out.println("Nacionalidad");
+                nationality = read.nextLine();
+                System.out.println("City of residence");
+                city = read.nextLine();
+                System.out.println("ID");
+                ID = read.nextLine();
+                users.add(new Alumnos(name, usern, password, nationality, city, ID));
+                
+                String salida="";
+                for (Object temp : users) {
+                    if (temp instanceof Alumnos) {
+                        salida+=temp+"\n";
+                        
+                    }
+                }
+                System.out.println(salida);
             }
+            if(opt==3){
+                String log1="";
+                String log2="";
+                System.out.println("LOG IN");
+                System.out.println("Ingrese su usuario");
+                log1 = read.nextLine();
+                System.out.println("Password");
+                log2 = read.nextLine();
+                
+                for (Object temp : users) {
+                   // if (log1.equals((Alumnos)users.get()){
+                        
+                    
+                }
+    
+                
+                
+            }
+
+            System.out.println("1/ Admin");
+            System.out.println("2/ Create account");
+            System.out.println("3/ Log in");
+            System.out.println("4/ Shut Down");
+            
+            opt = read.nextInt();
         }
     }
     
